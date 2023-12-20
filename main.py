@@ -23,7 +23,7 @@ class reactionGameClass:
         self.score = 0
         
     def randomCheckPointLocation(self):
-        self.checkPoint = random.randint(100, 1000), random.randint(200, 400)
+        self.checkPoint = random.randint(100, 1000), random.randint(200, 400) #random x and y points
 
     def update(self, imgMain, currentHead):
         cx, cy = currentHead
@@ -89,7 +89,7 @@ while True:
             game.score = 0
 
     cvzone.putTextRect(img, f"Score: {game.score}", [50, 80], scale = 3, thickness = 3, offset = 10, colorR = (0, 255, 0)) # Display score
-    cvzone.putTextRect(img, f"Timer: {int(curr_time)}", [50, 160], scale = 3, thickness = 3, offset = 10, colorR = (0, 255, 0)) # Display timer
+    cvzone.putTextRect(img, f"Timer: {max_time - int(curr_time)}", [50, 160], scale = 3, thickness = 3, offset = 10, colorR = (0, 255, 0)) # Display timer
 
     # Display the image in a window
     cv2.imshow("Image", img)
